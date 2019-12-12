@@ -403,3 +403,21 @@ request.onreadystatechange = function() {
     }
 }
 
+
+
+//========== WEB Api запрос на сервер и его обработка ==========
+
+fetch('http://blog.api.axenov-it.com/posts/1', {
+    method: 'POST',
+    body: JSON.stringify({
+        title: 'New Name'
+    }),
+})
+    .then(function (response){
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+    })
+
+
